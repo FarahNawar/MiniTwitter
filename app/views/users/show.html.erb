@@ -1,0 +1,17 @@
+<%= button_to 'Logout', logout_path, method: :delete %>
+<p style="color: green"><%= notice %></p>
+<h1> <%= @user.name %> </h1>
+<p> Your Timeline: </p>
+ 
+<%  @user.microposts.each do |post|  %>
+      <p>
+        <br>
+        <%= post.created_at %>
+        <br>
+        <%=post.content %>
+        <%= button_to 'Delete post', micropost_path(post), method: :delete %>
+      </p>
+<% end %>
+<%= link_to "Create new post", new_micropost_path%>
+
+

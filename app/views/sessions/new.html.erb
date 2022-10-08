@@ -1,0 +1,14 @@
+<h1>Log In</h1>
+<%= render "form", user: @user %>
+<% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
+  
+<div>
+  <p>
+    Not signed up yet? Click here to sign up 
+    <%= link_to "Sign up", new_user_path %>
+  </p>
+</div>
