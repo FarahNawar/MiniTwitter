@@ -1,14 +1,20 @@
-<h1>Log In</h1>
-<%= render "form", user: @user %>
-<% flash.each do |type, msg| %>
-    <div>
-      <%= msg %>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <br><br><br>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h1>Log In</h1>
+        <%= render "form", user: @user %>
+        <% flash.each do |type, msg| %>
+          <div>
+            <%= msg %>
+          </div>
+        <% end %>
+        <p>
+          Not signed up yet? Click here to sign up 
+          <%= link_to "Sign up", new_user_path %>
+        </p>
+      </div>
     </div>
-  <% end %>
-  
-<div>
-  <p>
-    Not signed up yet? Click here to sign up 
-    <%= link_to "Sign up", new_user_path %>
-  </p>
-</div>
+  </div>
+</section>
