@@ -1,17 +1,44 @@
 <%= button_to 'Logout', logout_path, method: :delete %>
 <p style="color: green"><%= notice %></p>
-<h1> <%= @user.name %> </h1>
-<p> Your Timeline: </p>
- 
-<%  @user.microposts.each do |post|  %>
-      <p>
-        <br>
-        <%= post.created_at %>
-        <br>
-        <%=post.content %>
-        <%= button_to 'Delete post', micropost_path(post), method: :delete %>
-      </p>
-<% end %>
-<%= link_to "Create new post", new_micropost_path%>
-
-
+<section class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card">
+          <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
+            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
+              <img src="/profilepicture.jpg"
+                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                style="width: 150px; z-index: 1">
+            </div>
+            <div class="ms-3" style="margin-top: 130px;">
+              <h5><%= @user.name %></h5>
+            </div>
+          </div>
+          <div class="d-flex justify-content-end text-center py-1" style="background-color: #f8f9fa;">
+            <%= link_to "Create new post", new_micropost_path%>
+          </div>
+          <div class="card-body p-4 text-black">
+            <div class="mb-5">
+              <p class="lead fw-normal mb-1">Your Timeline</p>
+              <div class="p-4" style="background-color: #f8f9fa;">
+                <p class="font-italic mb-1">
+                <%  @user.microposts.each do |post|  %>
+                  <p>
+                    <br>
+                    <%= post.created_at %>
+                    <br>
+                    <%=post.content %>
+                    <%= button_to 'Delete post', micropost_path(post), method: :delete %>
+                  </p>
+            <% end %>
+                
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
