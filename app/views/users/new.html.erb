@@ -1,13 +1,24 @@
-<h1>Sign Up</h1>
-
-<%= render "form", user: @user %>
-
-<br>
-
-<div>
-  <%= link_to "Log in?", login_path%>
-</div>
-
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="jumbotron text-center">
+      <h1>Mini Twitter</h1>      
+      <p>Connect with your friends</p>
+    </div>
+    <br><br><br>
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+        <h1>Sign Up</h1>
+        <%= render "form", user: @user %>
+        Already signed up?
+        <%= link_to "Log in", login_path%>   
+      </div>
+    </div>
+  </div>
+</section>
 
 
 
