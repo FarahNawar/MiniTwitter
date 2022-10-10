@@ -1,29 +1,59 @@
-<%= button_to 'Logout', logout_path, method: :delete %>
 <p style="color: green"><%= notice %></p>
-<section class="h-100 gradient-custom-2">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col col-lg-9 col-xl-7">
-        <div class="card">
-          <div class="rounded-top text-white d-flex flex-row" style="background-color: #000; height:200px;">
-            <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px;">
-              <img src="/profilepicture.jpg"
-                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                style="width: 150px; z-index: 1">
-            </div>
-            <div class="ms-3" style="margin-top: 130px;">
-              <h5><%= @user.name %></h5>
+<main>
+  <header>
+    <div class="tb">
+      <div class="td" id="i-links">
+        <div class="tb">
+          <div class="td">
+            <span class='btn btn-secondary'><%= button_to 'Logout', logout_path, method: :delete %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div id="profile-upper">
+    <div id="profile-banner-image">
+      <img src="" alt="Banner image">
+    </div>
+    <div id="profile-d">
+      <div id="profile-pic">
+        <img src="/profilepicture.jpg">
+      </div>
+      <div id="u-name"><%= @user.name %></div>
+    </div>
+    <div id="black-grd"></div>
+  </div>
+  <div id="main-content">
+    <div class="tb">
+      <div class="td" id="l-col">
+        <div class="l-cnt">
+          <div class="cnt-label">
+            <i class="l-i" id="l-i-i"> </i>
+          </div>
+          <div id="i-box">
+            <div id="intro-line">hi</div>
+          </div>
+        </div>
+      </div>
+      <div class="td" id="m-col">
+        <div class="m-mrg" id="composer">
+          <div id="c-tabs-cvr">
+            <div class="tb" id="c-tabs">
+              <div class="td active"><class="material-icons"><span> <%= link_to "Create new post", new_micropost_path%> </span></div>
             </div>
           </div>
-          <div class="d-flex justify-content-end text-center py-1" style="background-color: #f8f9fa;">
-            <%= link_to "Create new post", new_micropost_path%>
+          <div id="c-c-main">
+            <div class="tb">
+              <div class="td" id="c-inp">
+                <input type="text" placeholder="">
+              </div>
+            </div>
           </div>
-          <div class="card-body p-4 text-black">
-            <div class="mb-5">
-              <p class="lead fw-normal mb-1">Your Timeline</p>
-              <div class="p-4" style="background-color: #f8f9fa;">
-                <p class="font-italic mb-1">
-                <%  @user.microposts.each do |post|  %>
+        </div>
+        <div>
+          <div class="post">            
+            <div>
+              <%  @user.microposts.each do |post|  %>
                   <p>
                     <br>
                     <%= post.created_at %>
@@ -31,14 +61,39 @@
                     <%=post.content %>
                     <%= button_to 'Delete post', micropost_path(post), method: :delete %>
                   </p>
-            <% end %>
-                
-                </p>
-              </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="td" id="r-col">
+        <div id="chat-bar">
+          <div id="chat-lb"><i class="material-icons"></i><span>Friends</span></div>
+          <div id="cts">
+            <div class="on-ct active">
+              <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+            </div>
+            <div class="on-ct active">
+              <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+            </div>
+            <div class="on-ct">
+              <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+            </div>
+            <div class="on-ct active">
+              <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
+            </div>
+            <div class="on-ct active">
+              <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+            </div>
+            <div class="on-ct">
+              <a href="#"><img src="https://imagizer.imageshack.com/img924/4231/JnFicn.jpg"></a>
+            </div>
+            <div class="on-ct">
+              <a href="#"><img src="https://imagizer.imageshack.com/img923/332/1abR4H.png"></a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</main>
