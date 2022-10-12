@@ -1,7 +1,6 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Users</h1>
-
+<%= link_to "View my profile", @current_user %>
 <div id="users">
   <% @users.each do |user| %>
     <%= render user %>

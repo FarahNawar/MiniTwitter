@@ -31,11 +31,12 @@
             <i class="l-i" id="l-i-i"> </i>
           </div>
           <div id="i-box">
-            <div id="intro-line">hi</div>
+            <div id="intro-line"></div>
+              <%= link_to "All User", users_path %>
               <section class="stats">
                 <%= render 'shared/stats' %>
               </section>
-              <%= render 'follow_form' %>
+              <%= render 'follow_form' if logged_in? %>
           </div>
         </div>
       </div>
