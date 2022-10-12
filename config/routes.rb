@@ -7,7 +7,13 @@ Rails.application.routes.draw do
   post 'log_in', to: 'sessions#create'
   delete 'log_out', to: 'sessions#destroy', as: :logout
   resources :microposts
-  resources :users
+
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
